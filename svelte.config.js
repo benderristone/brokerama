@@ -1,5 +1,5 @@
 import preprocess from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-static';
+import static_adapter from '@sveltejs/adapter-static';
 
 const dev = process.env.NODE_ENV === 'development';
 
@@ -18,12 +18,7 @@ const config = {
 		// If you are not using a .nojekyll file, change your appDir to something not starting with an underscore.
 		// For example, instead of '_app', use 'app_', 'internal', etc.
 		appDir: 'app_',
-		adapter: adapter({
-			// default options are shown
-			pages: 'build',
-			assets: 'build',
-			fallback: null
-		})
+		adapter: static_adapter()
 	}
 };
 
